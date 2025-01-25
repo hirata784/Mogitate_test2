@@ -1,0 +1,14 @@
+.header-inner {
+    padding: 5px 20px;
+}
+
+.header-logo {
+    color: orange;
+    font-size: 30px;
+    font-family: cursive;
+}
+
+.main{
+    background-color: #F8F8F8;
+    height: 2000px;
+}

@@ -1,0 +1,68 @@
+h1 {
+    margin: 0 0 40px 0;
+}
+
+p {
+    margin: 30px 0 10px 0;
+}
+
+.registration-form {
+    width: fit-content;
+    margin: 0 auto;
+    padding-top: 80px;
+}
+
+.Required {
+    background-color: red;
+    color: white;
+    padding: 3px 5px;
+    margin-left: 10px;
+    font-size: 12px;
+}
+
+.multiple {
+    color: red;
+    /* background-color: #F8F8F8; */
+    font-size: 12px;
+}
+
+.txt {
+    width: 680px;
+    padding: 10px;
+    border-radius: 5px;
+    border: gray solid 1px;
+}
+
+.season label {
+    margin-right: 40px;
+}
+
+.explanation {
+    padding: 10px;
+    border-radius: 5px;
+    border: gray solid 1px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;
+}
+
+.back-btn {
+    padding: 10px 70px;
+    margin-right: 20px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    box-shadow: 0 5px #ccc;
+}
+
+.registration-btn {
+    padding: 10px 70px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    box-shadow: 0 5px #ccc;
+    background-color: orange;
+}
