@@ -5,10 +5,10 @@
 @endsection
 
 @section('content')
-<form action="">
+<form action="" class="changes-form">
     <div class="content">
         <div class="img">
-            <img src="{{asset('storage/{banana.png}')}}" alt="NotImage" width="240" height="80">
+            <img src="./storage/app/public/fruits-img/banana.png" alt="バナナ" width="240" height="80">
             <button>ファイルを選択</button>
         </div>
         <div class="textbox">
@@ -33,9 +33,17 @@
                 <input type="radio" name="season" id="winter" value="冬">
                 <label for="winter">冬</label>
             </div>
-
-
         </div>
+    </div>
+
+    <div>
+        <p>商品説明</p>
+        <textarea class="explanation" name="" id="" cols="150" rows="10" placeholder="商品の説明を入力"></textarea>
+    </div>
+
+    <div class="buttons">
+        <button class="back-btn">戻る</button>
+        <button class="registration-btn">登録</button>
     </div>
 </form>
 @endsection
