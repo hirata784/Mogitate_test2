@@ -3,28 +3,29 @@ p {
 }
 
 .changes-form {
-    width: fit-content;
+    width: 60%;
     margin: 0 auto;
     padding-top: 80px;
 }
 
-.img{
-    margin-top: 30px;
-}
-
-.content{
-    width: fit-content;
+.content {
+    width: 100%;
     margin: 0 auto;
-    padding: 40px;
     display: flex;
 }
 
-.textbox{
+.img {
+    margin-top: 30px;
+    width: 50%;
+}
+
+.textbox {
     margin-left: 30px;
+    width: 50%;
 }
 
 .txt {
-    width: 300px;
+    width: 100%;
     padding: 10px;
     border-radius: 5px;
     border: gray solid 1px;
@@ -35,6 +36,7 @@ p {
 }
 
 .explanation {
+    width: 100%;
     padding: 10px;
     border-radius: 5px;
     border: gray solid 1px;

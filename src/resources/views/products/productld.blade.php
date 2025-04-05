@@ -8,8 +8,7 @@
 <form action="" class="changes-form">
     <div class="content">
         <div class="img">
-            <img src="./storage/app/public/fruits-img/banana.png" alt="バナナ" width="240" height="80">
-            <button>ファイルを選択</button>
+            <input id="image" type="file" name="image">
         </div>
         <div class="textbox">
             <div>
@@ -24,13 +23,13 @@
 
             <div class="season">
                 <p>季節</p>
-                <input type="radio" name="season" id="spring" value="春">
+                <input type="checkbox" name="season" id="spring" value="spring">
                 <label for="spring">春</label>
-                <input type="radio" name="season" id="summer" value="夏">
+                <input type="checkbox" name="season" id="summer" value="summer">
                 <label for="summer">夏</label>
-                <input type="radio" name="season" id="autumn" value="秋">
+                <input type="checkbox" name="season" id="autumn" value="autumn">
                 <label for="autumn">秋</label>
-                <input type="radio" name="season" id="winter" value="冬">
+                <input type="checkbox" name="season" id="winter" value="winter">
                 <label for="winter">冬</label>
             </div>
         </div>
