@@ -38,7 +38,7 @@ h1 {
 
 .search-txt {
     width: 100%;
-    padding: 10px 0;
+    padding: 10px 8px;
     border-radius: 50px;
     margin-bottom: 20px;
     border: #e0dfde solid 1px;
@@ -60,8 +60,30 @@ h1 {
     border: #e0dfde solid 1px;
 }
 
+.products {
+    width: 85%;
+}
 
+.product-list {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
 
-.items {
-    width: 75%;
+.product-card {
+    width: 30%;
+}
+
+.product-img {
+    width: 100%;
+    height: auto;
+}
+
+.product-str {
+    display: flex;
+    justify-content: space-between;
+    font-size: 25px;
+    padding: 10px;
+    background-color: #FFFFFF;
 }

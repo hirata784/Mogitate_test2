@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\IndexController;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\RegisterController;
 
@@ -16,6 +17,8 @@ use App\Http\Controllers\RegisterController;
 |
 */
 
-Route::get('/products/', [ProductsController::class, 'index']);
-Route::get('/products/productld', [ProductsController::class, 'productld']);
+Route::get('/products', [IndexController::class, 'index']);
+Route::get('/products/search', [IndexController::class, 'indexSearch']);
+
 Route::get('/products/register', [RegisterController::class, 'index']);
+Route::get('/products/{productId}', [ProductsController::class, 'productId']);

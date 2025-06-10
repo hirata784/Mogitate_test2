@@ -42,9 +42,10 @@
         </div>
 
         <div class="buttons">
-            <button class="back-btn">戻る</button>
-            <button class="registration-btn">登録</button>
+            <button class="back-btn" type="button" onClick="history.back()">戻る</button>
+            <button class=" registration-btn">登録</button>
         </div>
+
     </div>
 </form>
 @endsection
