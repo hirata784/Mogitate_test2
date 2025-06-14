@@ -29,7 +29,7 @@ class IndexController extends Controller
         $data = $request->session()->get('keyword');
         // タイトルを設定
         if (isset($data)) {
-            $title = "“".$data . "”の商品一覧";
+            $title = "“" . $data . "”の商品一覧";
         } else {
             $title = "商品一覧";
         }

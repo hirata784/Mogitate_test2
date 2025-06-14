@@ -4,21 +4,18 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Season;
+use App\Models\Product;
 
-class Product extends Model
+class Season extends Model
 {
     use HasFactory;
 
     protected $fillable = [
         'name',
-        'price',
-        'image',
-        'description'
     ];
 
-    public function seasons()
+    public function products()
     {
-        return $this->belongsToMany(Season::class);
+        return $this->belongsToMany(Product::class);
     }
 }
