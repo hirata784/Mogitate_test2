@@ -40,4 +40,5 @@
         </div>
     </div>
 </div>
+{{ $products->appends(request()->input())->links() }}
 @endsection

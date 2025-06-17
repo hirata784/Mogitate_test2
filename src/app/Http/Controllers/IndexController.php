@@ -10,12 +10,11 @@ class IndexController extends Controller
     // 商品一覧 初期画面
     public function index()
     {
-        $products = Product::all();
+        $products = Product::paginate(6);
         // 検索ワードに空白を設定
         $data = "";
         // タイトルを設定
         $title = "商品一覧";
-
         return view('/products/index', compact('products', 'data', 'title'));
     }
 
@@ -23,7 +22,7 @@ class IndexController extends Controller
     public function indexSearch(Request $request)
     {
         // 検索結果
-        $products = Product::where('name', 'like', '%' . $request['keyword'] . '%')->get();
+        $products = Product::where('name', 'like', '%' . $request['keyword'] . '%')->paginate(6);
         // 検索ワードをセッションで保持
         $request->session()->put('keyword', $request['keyword']);
         $data = $request->session()->get('keyword');
@@ -33,7 +32,6 @@ class IndexController extends Controller
         } else {
             $title = "商品一覧";
         }
-
         return view('/products/index', compact('products', 'data', 'title'));
     }
 }

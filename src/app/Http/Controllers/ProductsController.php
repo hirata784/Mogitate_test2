@@ -3,10 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
-use App\Models\Season;
 use App\Http\Requests\ProductsRequest;
-
-use Illuminate\Http\Request;
 
 class ProductsController extends Controller
 {
@@ -42,6 +39,13 @@ class ProductsController extends Controller
     {
         // データを取得
         $update_product = $request->only(['name', 'price', 'description']);
+
+        // 画像データ更新
+        if (request('image')) {
+            $filename = request()->file('image')->getClientOriginalName();
+            $inputs['image'] = request('image')->storeAs('public/fruits-img', $filename);
+            Product::find($id)->update($inputs);
+        }
 
         // 変更前の商品データを取得
         $product = Product::find($id);

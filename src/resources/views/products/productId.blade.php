@@ -6,12 +6,18 @@
 
 
 @section('content')
-<form action="/products/{{$product['id']}}/update" method="post" class="changes-form">
+<form action="/products/{{$product['id']}}/update" method="post" class="changes-form" enctype="multipart/form-data">
     @csrf
     <div class="content">
         <div class="img">
-            <img class="product-img" src="{{ Storage::url($product['image']) }}">
-            <input id="image" type="file" name="image">
+            <input class="icon-btn" type="file" name="image" onchange="preview(this)">
+            <div class="preview-area"></div>
+            <img class="product-img" id="hidden" src="{{ Storage::url($product['image']) }}">
+            <div class="form-error">
+                @error('image')
+                {{ $message }}
+                @enderror
+            </div>
         </div>
         <div class="textbox">
             <div>
@@ -69,4 +75,15 @@
         <button class="registration-btn">登録</button>
     </div>
 </form>
+
+<script>
+    function preview(elem) {
+        const file = elem.files[0]
+        const isOK = file?.type?.startsWith('image/')
+        const image = (file && isOK) ? `<img class="preview-img" src=${URL.createObjectURL(file)}>` : ''
+        elem.nextElementSibling.innerHTML = image
+        // 画像選択時、デフォルトの画像を非表示にする
+        hidden.style.display = "none";
+    }
+</script>
 @endsection

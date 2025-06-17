@@ -72,3 +72,9 @@ p {
     box-shadow: 0 5px #ccc;
     background-color: orange;
 }
+
+.form-error {
+    height: 20px;
+    color: #ff0000;
+    text-align: left;
+}

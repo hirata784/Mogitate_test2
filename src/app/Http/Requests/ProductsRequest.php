@@ -24,6 +24,7 @@ class ProductsRequest extends FormRequest
     public function rules()
     {
         return [
+            'image' => ['required', 'mimes:jpg,png'],
             'name' => ['required'],
             'price' => ['required', 'numeric', 'between:0,10000'],
             'season' => ['required'],
@@ -33,6 +34,8 @@ class ProductsRequest extends FormRequest
     public function messages()
     {
         return [
+            'image.required' => '画像をアップロードしてください',
+            'image.mimes' => '拡張子が.jpgもしくは.pngの画像を選択してください',
             'name.required' => '商品名を入力してください',
             'price.required' => '値段を入力してください',
             'price.numeric' => '数値で入力してください',

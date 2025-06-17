@@ -87,3 +87,9 @@ h1 {
     padding: 10px;
     background-color: #FFFFFF;
 }
+
+svg.w-5.h-5 {
+    /*paginateメソッドの矢印の大きさ調整のために追加*/
+    width: 30px;
+    height: 30px;
+}

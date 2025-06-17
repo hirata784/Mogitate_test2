@@ -19,7 +19,7 @@ use App\Http\Controllers\RegisterController;
 
 Route::get('/products', [IndexController::class, 'index']);
 Route::get('/products/search', [IndexController::class, 'indexSearch']);
-
 Route::get('/products/register', [RegisterController::class, 'index']);
 Route::get('/products/{productId}', [ProductsController::class, 'productId']);
 Route::post('/products/{productId}/update', [ProductsController::class, 'update']);
+Route::post('/products/register/create', [RegisterController::class, 'create']);
