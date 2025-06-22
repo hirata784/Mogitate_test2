@@ -22,4 +22,5 @@ Route::get('/products/search', [IndexController::class, 'indexSearch']);
 Route::get('/products/register', [RegisterController::class, 'index']);
 Route::get('/products/{productId}', [ProductsController::class, 'productId']);
 Route::post('/products/{productId}/update', [ProductsController::class, 'update']);
+Route::post('/products/{productId}/delete', [ProductsController::class, 'delete']);
 Route::post('/products/register/create', [RegisterController::class, 'create']);

@@ -37,12 +37,6 @@ class RegisterController extends Controller
             Product::find($row + 1)->seasons()->attach($season);
         }
 
-        // 商品一覧表示用
-        $products = Product::paginate(6);
-        // 検索ワードに空白を設定
-        $data = "";
-        // タイトルを設定
-        $title = "商品一覧";
-        return view('/products/index', compact('products', 'data', 'title'));
+        return redirect('/products');
     }
 }

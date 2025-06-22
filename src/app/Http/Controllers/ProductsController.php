@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use App\Http\Requests\ProductsRequest;
+use GuzzleHttp\Psr7\Request;
 
 class ProductsController extends Controller
 {
@@ -64,17 +65,27 @@ class ProductsController extends Controller
             // 変更後の季節データを追加
             $product->seasons()->attach($update_season);
         }
-
         // データ更新
         Product::find($id)->update($update_product);
 
-        // 商品一覧表示用
-        $products = Product::all();
-        // 検索ワードに空白を設定
-        $data = "";
-        // タイトルを設定
-        $title = "商品一覧";
+        return redirect('/products');
+    }
 
-        return view('/products/index', compact('products', 'data', 'title'));
+    public function delete($id)
+    {
+        // データを取得
+        $product = Product::find($id);
+        $seasons = Product::find($id)->seasons;
+
+        foreach ($seasons as $season) {
+            // 季節データidを取得
+            $season_id = $season['id'];
+            // 季節データを削除
+            $product->seasons()->detach($season_id);
+        }
+        // データ削除
+        Product::find($id)->delete();
+
+        return redirect('/products');
     }
 }

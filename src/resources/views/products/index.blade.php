@@ -15,7 +15,7 @@
 
 <div class="body-inner">
     <div class="search">
-        <form action="/products/search" method="get">
+        <form class="search-form" action="/products/search" method="get">
             @csrf
             <input type="text" class="search-txt" name="keyword" placeholder="商品名で検索" value="{{$data}}">
             <button class="search-btn">検索</button>
@@ -38,7 +38,7 @@
             </div>
             @endforeach
         </div>
+        {{ $products->appends(request()->input())->links('vendor.pagination.custom') }}
     </div>
 </div>
-{{ $products->appends(request()->input())->links() }}
 @endsection

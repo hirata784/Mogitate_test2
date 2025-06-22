@@ -8,7 +8,42 @@
     font-family: cursive;
 }
 
-.main{
+.main {
     background-color: #F8F8F8;
-    height: 2000px;
+    height: 1000px;
+}
+
+/* ページネーション */
+.pagination {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+.pagination li:not(.active) {
+    border-radius: 50px;
+    background-color: #FFFFFF;
+    padding: 4px 12px;
+    margin: 0 8px;
+}
+
+.pagination li:not(:last-child) {
+    border-right: none;
+}
+
+.pagination a {
+    color: #8B7969;
+    text-decoration: none;
+}
+
+.pagination__link {
+    text-decoration: none;
+}
+
+.active {
+    padding: 4px 12px;
+    margin: 0 8px;
+    border-radius: 50px;
+    background-color: #f5c800;
+    color: #FFF;
 }

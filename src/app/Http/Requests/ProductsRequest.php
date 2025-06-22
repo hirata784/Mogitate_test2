@@ -34,8 +34,8 @@ class ProductsRequest extends FormRequest
     public function messages()
     {
         return [
-            'image.required' => '画像をアップロードしてください',
-            'image.mimes' => '拡張子が.jpgもしくは.pngの画像を選択してください',
+            'image.required' => '商品画像を登録してください',
+            'image.mimes' => '「.png」または「.jpeg」形式でアップロードしてください',
             'name.required' => '商品名を入力してください',
             'price.required' => '値段を入力してください',
             'price.numeric' => '数値で入力してください',

@@ -76,6 +76,11 @@
     </div>
 </form>
 
+<form action="/products/{{$product['id']}}/delete" method="post">
+    @csrf
+    <button class="delete">削除</button>
+</form>
+
 <script>
     function preview(elem) {
         const file = elem.files[0]
