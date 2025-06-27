@@ -20,10 +20,27 @@
             <input type="text" class="search-txt" name="keyword" placeholder="商品名で検索" value="{{$data}}">
             <button class="search-btn">検索</button>
             <p>価格順で表示</p>
-            <select class="search-slt" name="" id="">
-                <option value="">高い順</option>
-                <option value="">安い順</option>
+            <select class="search-slt" name="sort" id="">
+                <option value="" disabled selected style="display:none;">価格で並べ替え</option>
+                <option value="high" @if($sort=="high" ) selected @endif>高い順に表示</option>
+                <option value="cheap" @if($sort=="cheap" ) selected @endif>安い順に表示</option>
             </select>
+            <!-- 価格ソート削除 -->
+            @if($sort == "high")
+            <div class="sort-btn">
+                <span class="sorting">高い順に表示</span>
+                <button class="chancel" name="chancel" value="">×</button>
+            </div>
+            <!-- sortの値が残ったまま処理するため、sortの値削除 -->
+            <input type="hidden" name="sort" value="">
+            @elseif($sort == "cheap")
+            <div class="sort-btn">
+                <span class="sorting">安い順に表示</span>
+                <button class="chancel" name="chancel" value="">×</button>
+            </div>
+            <!-- sortの値が残ったまま処理するため、sortの値削除 -->
+            <input type="hidden" name="sort" value="">
+            @endif
         </form>
     </div>
     <div class="products">

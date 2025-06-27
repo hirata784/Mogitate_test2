@@ -63,6 +63,24 @@ h1 {
     border: #e0dfde solid 1px;
 }
 
+.sort-btn {
+    border: 1px solid #f5c800;
+    padding: 5px 10px;
+    border-radius: 30px;
+    width: fit-content;
+}
+
+.sorting {
+    font-size: 14px;
+}
+
+.chancel {
+    color: #f5c800;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
 .products {
     width: 85%;
 }
