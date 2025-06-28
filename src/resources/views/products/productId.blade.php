@@ -71,14 +71,21 @@
     </div>
 
     <div class="buttons">
-        <button class="back-btn" type="button" onClick="history.back()">戻る</button>
-        <button class="registration-btn">登録</button>
+        <div class="left">
+        </div>
+        <div class="center">
+            <button class="back-btn" type="button" onClick="history.back()">戻る</button>
+            <button class="registration-btn">登録</button>
+        </div>
+        <div class="right">
+            <a href="javascript:document.getElementById('a-post').submit()"><img class="delete" src="{{ Storage::url('public/images/trashcan.png') }}"></a>
+        </div>
     </div>
 </form>
-
-<form action="/products/{{$product['id']}}/delete" method="post">
+<!-- 削除ボタン用(表示されない) -->
+<form id="a-post" action="/products/{{$product['id']}}/delete" method="post" style="display: none">
     @csrf
-    <button class="delete">削除</button>
+    <button class="trashcan">削除</button>
 </form>
 
 <script>

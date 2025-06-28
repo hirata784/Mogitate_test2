@@ -56,7 +56,7 @@ p {
 
 .buttons {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     padding-top: 30px;
 }
 
@@ -76,6 +76,11 @@ p {
     outline: none;
     box-shadow: 0 5px #ccc;
     background-color: orange;
+}
+
+.delete {
+    width: 30px;
+    height: auto;
 }
 
 .form-error {
