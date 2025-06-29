@@ -4,10 +4,12 @@
 <link rel="stylesheet" href="{{ asset('css/productId.css') }}">
 @endsection
 
-
 @section('content')
 <form action="/products/{{$product['id']}}/update" method="post" class="changes-form" enctype="multipart/form-data">
     @csrf
+    <div>
+        <span class="str-blue">商品一覧&nbsp;</span>>&nbsp;{{$product['name']}}
+    </div>
     <div class="content">
         <div class="img">
             <input class="icon-btn" type="file" name="image" onchange="preview(this)">
@@ -29,7 +31,6 @@
                     @enderror
                 </div>
             </div>
-
             <div>
                 <p>値段</p>
                 <input type="text" class="txt" name="price" placeholder="値段を入力" value="{{$product['price']}}">
@@ -39,7 +40,6 @@
                     @enderror
                 </div>
             </div>
-
             <!-- Seasonテーブルに代入されている旬の季節にチェックマークをつける -->
             <div class="season">
                 <p>季節</p>
@@ -59,7 +59,6 @@
             </div>
         </div>
     </div>
-
     <div>
         <p>商品説明</p>
         <textarea class="explanation" name="description" id="" cols="150" rows="10" placeholder="商品の説明を入力">{{$product['description']}}</textarea>
@@ -69,7 +68,6 @@
             @enderror
         </div>
     </div>
-
     <div class="buttons">
         <div class="left">
         </div>

@@ -11,14 +11,13 @@
         <h1>商品登録</h1>
         <div>
             <p>商品名<span class="Required">必須</span></p>
-            <input type="text" class="txt" name="name" placeholder="商品名を入力" value="">
+            <input type="text" class="txt" name="name" placeholder="商品名を入力">
             <div class="form-error">
                 @error('name')
                 {{ $message }}
                 @enderror
             </div>
         </div>
-
         <div>
             <p>値段<span class="Required">必須</span></p>
             <input type="text" class="txt" name="price" placeholder="値段を入力">
@@ -28,7 +27,6 @@
                 @enderror
             </div>
         </div>
-
         <div>
             <p>商品画像<span class="Required">必須</span></p>
             <div class="img">
@@ -41,7 +39,6 @@
                 @enderror
             </div>
         </div>
-
         <div class="season">
             <p>季節<span class="Required">必須</span><span class="multiple">複数選択可</span></p>
             <input type="checkbox" name="season[]" id="spring" value="1">
@@ -58,7 +55,6 @@
                 @enderror
             </div>
         </div>
-
         <div>
             <p>商品説明<span class="Required">必須</span></p>
             <textarea class="explanation" name="description" id="" cols="150" rows="10" placeholder="商品の説明を入力"></textarea>
@@ -68,7 +64,6 @@
                 @enderror
             </div>
         </div>
-
         <div class="buttons">
             <button class="back-btn" type="button" onClick="history.back()">戻る</button>
             <button class=" registration-btn">登録</button>

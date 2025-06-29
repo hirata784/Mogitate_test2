@@ -8,6 +8,10 @@ p {
     padding-top: 80px;
 }
 
+.str-blue{
+    color: #0285ff;
+}
+
 .content {
     width: 100%;
     margin: 0 auto;

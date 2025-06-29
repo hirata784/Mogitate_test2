@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use App\Http\Requests\ProductsRequest;
-use GuzzleHttp\Psr7\Request;
 
 class ProductsController extends Controller
 {
@@ -19,7 +18,6 @@ class ProductsController extends Controller
         $summer = null;
         $autumn = null;
         $winter = null;
-
         // 季節が選択されている場合、季節変数に値を代入
         foreach ($seasons as $season) {
             if ($season['name'] == "春") {
@@ -32,7 +30,6 @@ class ProductsController extends Controller
                 $winter = 1;
             }
         }
-
         return view('/products/productId', compact('id', 'product', 'spring', 'summer', 'autumn', 'winter'));
     }
 
@@ -40,14 +37,12 @@ class ProductsController extends Controller
     {
         // データを取得
         $update_product = $request->only(['name', 'price', 'description']);
-
         // 画像データ更新
         if (request('image')) {
             $filename = request()->file('image')->getClientOriginalName();
             $inputs['image'] = request('image')->storeAs('public/fruits-img', $filename);
             Product::find($id)->update($inputs);
         }
-
         // 変更前の商品データを取得
         $product = Product::find($id);
         // 変更前の季節データを取得
@@ -58,7 +53,6 @@ class ProductsController extends Controller
             // 変更前の季節データを削除
             $product->seasons()->detach($season_id);
         }
-
         // 変更後の季節データを取得
         $update_seasons = $request->only(['season']);
         foreach ($update_seasons as $update_season) {
@@ -67,7 +61,6 @@ class ProductsController extends Controller
         }
         // データ更新
         Product::find($id)->update($update_product);
-
         return redirect('/products');
     }
 
@@ -76,7 +69,6 @@ class ProductsController extends Controller
         // データを取得
         $product = Product::find($id);
         $seasons = Product::find($id)->seasons;
-
         foreach ($seasons as $season) {
             // 季節データidを取得
             $season_id = $season['id'];
@@ -85,7 +77,6 @@ class ProductsController extends Controller
         }
         // データ削除
         Product::find($id)->delete();
-
         return redirect('/products');
     }
 }

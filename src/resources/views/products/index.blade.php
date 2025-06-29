@@ -12,7 +12,6 @@
         <button class="add-btn">+商品を追加</button>
     </form>
 </div>
-
 <div class="body-inner">
     <div class="search">
         <form class="search-form" action="/products/search" method="get">

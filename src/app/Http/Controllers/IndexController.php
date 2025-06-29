@@ -43,7 +43,6 @@ class IndexController extends Controller
             // 価格順設定なし
             $products = Product::where('name', 'like', '%' . $request['keyword'] . '%')->paginate(6);
         }
-
         // 検索ワードをセッションで保持
         $request->session()->put('keyword', $request['keyword']);
         $data = $request->session()->get('keyword');
@@ -56,7 +55,6 @@ class IndexController extends Controller
         } else {
             $title = "商品一覧";
         }
-
         return view('/products/index', compact('products', 'data', 'sort', 'title'));
     }
 }
